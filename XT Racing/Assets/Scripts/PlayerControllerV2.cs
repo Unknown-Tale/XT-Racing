@@ -23,10 +23,10 @@ public class PlayerControllerV2 : MonoBehaviour {
     float gravity = 9.8f;
     private bool braked = false;
 	private bool lights = false;
-    private float maxBrakeTorque = 1000;
+    private float maxBrakeTorque = 32000;
     private Rigidbody rb;
     public Transform centreofmass;
-    private float maxTorque = 2000;
+    private float maxTorque = 8000;
 	
     void Start () 
     {
@@ -47,7 +47,7 @@ public class PlayerControllerV2 : MonoBehaviour {
 			}
 			else
 			{
-				maxTorque = 2000;
+				maxTorque = 8000;
 			}
 			
      		if(!braked){
@@ -63,7 +63,7 @@ public class PlayerControllerV2 : MonoBehaviour {
       		
         	//changing car direction
         	WheelFL.steerAngle = 35 * (Input.GetAxis("Horizontal"));
-        	WheelFR.steerAngle = 35 * Input.GetAxis("Horizontal");
+        	WheelFR.steerAngle = 35 * (Input.GetAxis("Horizontal"));
 		}
     }
     void Update()
